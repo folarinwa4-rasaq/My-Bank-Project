@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <style>
+        button a{
+            text-decoration:none;
+            color:white;
+        }
+        button{
+            background-color:transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="N">
+                <h3>Folly's Banking Website</h3>
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="login-form">
+            <div>Transaction Reciept</div><hr>
+            <p>Transaction Type:<span>Money Transfer</span></p><br>
+            <p>Credited Account:<span>{{transfer.account}}</span></p><br>
+            <p>Debited Account:<span>{{account.accountno}}</span></p><br>
+            <p>Transaction Status:<span>Successful</span></p><br>
+            <button><a href="{% url 'home' %}">Back To Home Page</a></button><br>        
+        </div>
+    </main>
+</body>
+
+</html>

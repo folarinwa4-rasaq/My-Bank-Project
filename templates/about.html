@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <style>
+        h2{
+            display:flex;
+            justify-content:center;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="N">
+                <h3>Folly's Banking Website</h3>
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% if messages %}
+        {% for m in messages %}
+        <h2>{{m}}</h2><br>
+        <p>If You Want to Resolve This Problem You Can Contact Us Through Our Email Address:Lajfortschool@gmail.com</p>
+        {% endfor %}
+        {% else %}
+        <div>
+            <h1>About Us</h1>
+        </div>
+        <p>This Website Was Created By a sss2 Student From Lajfort College.He is 15 years old and Passionate About Learning How to Code.He Started Coding When He Was in sss1 Class.He is Very Humble And Dedicated to His Studies.<br>He Designed and Built This For Practice Purpose so He will be Able to be Good at Coding And ALso be Productive With The Knowledge of Coding.</p>
+        <div>
+            <h1>Contact Us</h1>
+        </div>
+        <p>You Can Contact Us Through Our Email Address:Lajfortschool@gmail.com</p>
+        {% endif %}
+    </main>
+</body>
+
+</html>

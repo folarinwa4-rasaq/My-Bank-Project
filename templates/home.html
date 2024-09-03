@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Banking Website</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <style>
+        h2{
+            display:flex;
+            justify-content:center;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="N">
+                <h3>Folly's Banking Website</h3>
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% if messages %}
+        {% for m in messages %}
+        <h2>{{m}}</h2>
+        <p>If You Want to Resolve This Problem You Can Contact Us Through Our Email Address:Lajfortschool@gmail.com</p>
+        {% endfor %}
+        {% else %}
+        <div class="cont">
+            <div class="info">
+                <h1>Welcome,{{user}}</h1>
+                <p>Acct no:{{p.accountno}}</p>
+                <p>Available Balance:<img src="{% static 'images/naira-icon.jpg' %}" alt="" class="naira">{{bal.amount}}</p>
+                <p><a href="{% url 'deposit' %}">+Add Money</a></p>
+            </div>
+            <div class="func">
+                <h3><a href="{% url 'withdraw' %}">Withdraw</a></h3>
+                <h3><a href="{% url 'transfer' %}">Transfer</a></h3>
+                <h3><a href="{% url 'deposit' %}">Deposit</a></h3>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</body>
+
+</html>

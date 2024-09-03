@@ -1,0 +1,13 @@
+main div {
+    display: flex;
+    justify-content: center;
+}
+
+main div h1 {
+    margin: 0;
+}
+
+p {
+    padding-left: 25px;
+    padding-right: 25px;
+}

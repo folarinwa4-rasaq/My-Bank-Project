@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Withdrawal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="N">
+                <h3>Folly's Banking Website</h3>
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            <div class="login-form">
+                <h2>Withdraw Your Money</h2>
+                {% for m in messages %}
+                <h5>{{m}}</h5>
+                {% endfor %}
+                <label for="acct">Enter Account to Withdraw To:</label><br>
+                <input id="acct" name="acct" type="number"><br>
+                <label for="amnt">Enter Amount To Withdraw:</label><br>
+                <input id="amnt" name="amount" type="number"><br>
+                <label for="pin">Enter Your Pin:</label><br>
+                <input id="pin" name="pin" type="password"><br>
+                {% if name %}
+                <span>You Are Withdrawing to {{name}} Account</span>
+                {% endif %}
+                <button>Withdraw</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

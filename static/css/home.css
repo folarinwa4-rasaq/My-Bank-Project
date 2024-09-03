@@ -1,0 +1,103 @@
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    /*background-image: url('static/images/web-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;*/
+    background-color: black;
+    color: white;
+    font-family: Arial;
+}
+
+.nav {
+    display: flex;
+    background-color: rgb(52, 49, 49);
+    align-items: center;
+    padding-right: 25px;
+    width: 100%;
+}
+
+.N {
+    margin-right: 255px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    padding-top: 100px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 300px 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.info {
+    background-color: color-mix(in srgb, white, transparent 80%);
+}
+
+.func {
+    background-color: color-mix(in srgb, white, transparent 85%);
+}
+
+.func h3 {
+    cursor: pointer;
+}
+
+.profile {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.info p a {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.link {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.naira {
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+}
